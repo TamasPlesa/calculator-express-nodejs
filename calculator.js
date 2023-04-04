@@ -24,8 +24,8 @@ app.post("/", (req, res) => {
 
 app.post("/bmicalculator", (req, res) => {
 
-    let weight = Number(req.body.weight);
-    let height = Number(req.body.height);
+    let weight = parseFloat(req.body.weight);
+    let height = parseFloat(req.body.height);
 
     let bmi = weight / (height**2);
 
