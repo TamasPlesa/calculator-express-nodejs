@@ -4,12 +4,14 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.use(express.static(__dirname));
+
 app.get("/", (req, res)=> {
     res.sendFile(__dirname + "/index.html")
 })
 
 app.get("/bmicalculator", (req, res) => {
-    res.sendFile(__dirname + "/bmiCalculator.html")
+    res.sendFile(__dirname + "/bmiCalculator.html");
 })
 
 app.post("/", (req, res) => {
